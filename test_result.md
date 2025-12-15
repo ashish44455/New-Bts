@@ -100,4 +100,45 @@
 
 #====================================================================================================
 # Testing Data - Main Agent and testing sub agent both should log testing data below this section
+## user_problem_statement: "Build a spiritual trust website for Sri Bala Tripura Sundari Seva Sadan with WhatsApp-only CTAs, sacred premium design, and fix blank/enable-JS fallback."
+## backend: []
+## frontend:
+##   - task: "Landing site pages + WhatsApp-only CTAs + floating WhatsApp button"
+##     implemented: true
+##     working: "NA"
+##     file: "/app/frontend/src/pages/* and /app/frontend/src/components/SiteLayout.jsx"
+##     stuck_count: 0
+##     priority: "high"
+##     needs_retesting: true
+##     status_history:
+##       - working: "NA"
+##         agent: "main"
+##         comment: "Implemented Home/About/Services/Astrology/Gallery(lightbox)/Store(catalog)/Contact with wa.me links and devotional styling. Data is mocked in src/mock.js."
+##   - task: "No-JS fallback content to avoid blank screen / enable-JS issue"
+##     implemented: true
+##     working: "NA"
+##     file: "/app/frontend/public/index.html"
+##     stuck_count: 0
+##     priority: "high"
+##     needs_retesting: true
+##     status_history:
+##       - working: "NA"
+##         agent: "main"
+##         comment: "Added informative <noscript> with WhatsApp CTA and trust info."
+## metadata:
+##   created_by: "main_agent"
+##   version: "1.0"
+##   test_sequence: 1
+##   run_ui: true
+## test_plan:
+##   current_focus:
+##     - "Landing site pages + WhatsApp-only CTAs + floating WhatsApp button"
+##     - "No-JS fallback content to avoid blank screen / enable-JS issue"
+##   stuck_tasks: []
+##   test_all: true
+##   test_priority: "high_first"
+## agent_communication:
+##   - agent: "main"
+##     message: "Please run UI automation to verify navigation across pages, WhatsApp CTAs open wa.me with prefilled message, gallery filter + lightbox open/close, carousel renders, mobile menu opens/closes, and 404 route. Also quickly sanity-check that <noscript> content exists in index.html (static check)."
+
 #====================================================================================================
