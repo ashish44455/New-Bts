@@ -1,4 +1,6 @@
 import React from "react";
+import NotFound from "@/pages/NotFound";
+
 import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
