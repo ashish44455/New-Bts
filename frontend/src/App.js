@@ -28,6 +28,8 @@ function App() {
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/store" element={<StorePage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="*" element={<NotFound />} />
+
           </Route>
         </Routes>
       </BrowserRouter>
