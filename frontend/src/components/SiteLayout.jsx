@@ -148,13 +148,14 @@ export const SiteLayout = () => {
 
                 <div className="mt-5 grid gap-2">
                   {navItems.map((it) => (
-                    <Link
-                      key={it.to}
-                      to={it.to}
-                      className="rounded-xl border border-[rgba(201,162,77,0.35)] bg-white/45 px-4 py-3 text-sm font-medium text-[color:var(--brand-text)] transition-colors hover:bg-white/70"
-                    >
-                      {it.label}
-                    </Link>
+                    <SheetClose asChild key={it.to}>
+                      <Link
+                        to={it.to}
+                        className="rounded-xl border border-[rgba(201,162,77,0.35)] bg-white/45 px-4 py-3 text-sm font-medium text-[color:var(--brand-text)] transition-colors hover:bg-white/70"
+                      >
+                        {it.label}
+                      </Link>
+                    </SheetClose>
                   ))}
                 </div>
 
