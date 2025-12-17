@@ -292,7 +292,7 @@ export default function Home() {
           {/* Panchangam tile */}
           <Link
             to="/reference/panchangam"
-            className="group overflow-hidden rounded-3xl border border-[rgba(201,162,77,0.35)] bg-white/30 shadow-[0_18px_55px_rgba(58,42,26,0.12)] backdrop-blur-[18px]"
+            className="overflow-hidden rounded-3xl border border-[rgba(201,162,77,0.35)] bg-white/30 shadow-[0_18px_55px_rgba(58,42,26,0.12)] backdrop-blur-[18px]"
             aria-label="View Panchangam"
           >
             <div className="relative">
@@ -303,23 +303,16 @@ export default function Home() {
                 className="h-52 w-full object-cover"
               />
               <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(58,42,26,0.55),transparent_65%)]" />
-              <div className="absolute bottom-3 left-3 right-3">
-                <div className="inline-flex items-center rounded-full border border-white/30 bg-white/15 px-3 py-1 text-xs font-semibold text-white backdrop-blur-[18px]">
-                  Reference
-                </div>
-              </div>
             </div>
             <div className="px-5 py-4">
-              <div className="text-xs text-[color:var(--brand-text-muted)]">
-                View Panchangam
-              </div>
+              <div className="text-xs text-[color:var(--brand-text-muted)]">View Panchangam</div>
             </div>
           </Link>
 
           {/* Calendar tile */}
           <Link
             to="/reference/calendar"
-            className="group overflow-hidden rounded-3xl border border-[rgba(201,162,77,0.35)] bg-white/30 shadow-[0_18px_55px_rgba(58,42,26,0.12)] backdrop-blur-[18px]"
+            className="overflow-hidden rounded-3xl border border-[rgba(201,162,77,0.35)] bg-white/30 shadow-[0_18px_55px_rgba(58,42,26,0.12)] backdrop-blur-[18px]"
             aria-label="View Calendar"
           >
             <div className="relative">
@@ -330,16 +323,9 @@ export default function Home() {
                 className="h-52 w-full object-cover"
               />
               <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(58,42,26,0.55),transparent_65%)]" />
-              <div className="absolute bottom-3 left-3 right-3">
-                <div className="inline-flex items-center rounded-full border border-white/30 bg-white/15 px-3 py-1 text-xs font-semibold text-white backdrop-blur-[18px]">
-                  Reference
-                </div>
-              </div>
             </div>
             <div className="px-5 py-4">
-              <div className="text-xs text-[color:var(--brand-text-muted)]">
-                View Calendar
-              </div>
+              <div className="text-xs text-[color:var(--brand-text-muted)]">View Calendar</div>
             </div>
           </Link>
         </div>
