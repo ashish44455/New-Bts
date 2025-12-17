@@ -227,7 +227,7 @@ export default function Home() {
       </section>
 
       {/* ADD-ON 2: Yearly Zodiac Predictions (2026–2027) */}
-      <section className="space-y-6">
+      <section className="space-y-2">
         {/* Icon-only display (no names on Home) */}
         <div className="rounded-3xl border border-[rgba(201,162,77,0.35)] bg-white/30 px-3 py-3 shadow-[0_18px_55px_rgba(58,42,26,0.10)] backdrop-blur-[18px]">
           <div className="flex w-full gap-2 overflow-x-auto px-1 py-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
