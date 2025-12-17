@@ -312,7 +312,7 @@ export default function Home() {
           {/* Embedded viewer */}
           <iframe
             title={`Andhra Panchangam ${PANCHANGAM_PDF.yearLabel} PDF`}
-            src={PANCHANGAM_PDF.pdfUrl}
+            src={PANCHANGAM_PDF.viewerUrl}
             className="h-[520px] w-full"
             loading="lazy"
           />
