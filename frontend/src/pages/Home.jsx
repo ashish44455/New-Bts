@@ -3,7 +3,16 @@ import { Link } from "react-router-dom";
 import { Flame, Flower2, Star, CalendarHeart, ChevronRight } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { ASTROLOGY, HERO, IMAGES, SERVICES, TRUST, buildWaMeLink } from "@/mock";
+import {
+  ASTROLOGY,
+  HERO,
+  IMAGES,
+  PANCHANGAM_PDF,
+  SERVICES,
+  TRUST,
+  ZODIAC_2026_2027,
+  buildWaMeLink,
+} from "@/mock";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
