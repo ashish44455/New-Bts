@@ -32,6 +32,16 @@ export default function ZodiacDetail() {
 
   return (
     <div className="mx-auto max-w-5xl space-y-6">
+      {/* Back navigation (explicit route to Home) */}
+      <div className="text-sm">
+        <Link to="/" className="font-semibold text-[color:var(--brand-red)]">
+          ← Back to Home
+        </Link>
+        <div className="mt-1 text-xs text-[color:var(--brand-text-muted)]">
+          హోమ్‌కు తిరిగి వెళ్ళండి
+        </div>
+      </div>
+
       <div className="space-y-2">
         <div className="font-display text-3xl font-semibold text-[color:var(--brand-text)] md:text-4xl">
           {titleEn}
