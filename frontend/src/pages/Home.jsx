@@ -224,6 +224,90 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ADD-ON 2: Yearly Zodiac Predictions (2026–2027) */}
+      <section className="space-y-6">
+        <SectionHeading
+          eyebrow={`${ZODIAC_2026_2027.titleEn} (${ZODIAC_2026_2027.yearLabel})`}
+          title={ZODIAC_2026_2027.titleTe}
+          desc={undefined}
+        />
+
+        <div className="max-w-3xl text-sm text-[color:var(--brand-text-muted)]">
+          <div>{ZODIAC_2026_2027.authorityEn}</div>
+          <div className="mt-1">{ZODIAC_2026_2027.authorityTe}</div>
+        </div>
+
+        <Card className="rounded-3xl border-[rgba(201,162,77,0.35)] bg-white/35 p-4 shadow-[0_18px_55px_rgba(58,42,26,0.12)] backdrop-blur-[18px] md:p-6">
+          <Accordion type="single" collapsible className="w-full">
+            {ZODIAC_2026_2027.rasis.map((r) => (
+              <AccordionItem key={r.key} value={r.key} className="border-[rgba(201,162,77,0.28)]">
+                <AccordionTrigger className="text-left font-display text-[color:var(--brand-text)]">
+                  <span className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                    <span className="font-semibold">{r.en}</span>
+                    <span className="text-sm font-semibold text-[color:var(--brand-red)]">
+                      {r.te}
+                    </span>
+                  </span>
+                </AccordionTrigger>
+                <AccordionContent className="text-sm text-[color:var(--brand-text-muted)]">
+                  <div className="space-y-3">
+                    <div>{r.textEn}</div>
+                    <div>{r.textTe}</div>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
+
+          <div className="mt-4 text-xs text-[color:var(--brand-text-muted)]">
+            <div>{ZODIAC_2026_2027.disclaimerEn}</div>
+            <div className="mt-1">{ZODIAC_2026_2027.disclaimerTe}</div>
+          </div>
+        </Card>
+      </section>
+
+      {/* ADD-ON 3: Andhra Panchangam PDF (view-only) */}
+      <section className="space-y-6">
+        <SectionHeading
+          eyebrow={`${PANCHANGAM_PDF.titleEn} (${PANCHANGAM_PDF.yearLabel})`}
+          title={PANCHANGAM_PDF.titleTe}
+          desc={undefined}
+        />
+
+        <div className="max-w-3xl text-sm text-[color:var(--brand-text-muted)]">
+          <div>{PANCHANGAM_PDF.noteEn}</div>
+          <div className="mt-1">{PANCHANGAM_PDF.noteTe}</div>
+        </div>
+
+        <Card className="overflow-hidden rounded-3xl border-[rgba(201,162,77,0.35)] bg-white/30 shadow-[0_18px_55px_rgba(58,42,26,0.12)] backdrop-blur-[18px]">
+          <div className="flex items-center justify-between gap-4 border-b border-[rgba(201,162,77,0.24)] bg-white/30 px-5 py-4">
+            <div className="text-sm font-semibold text-[color:var(--brand-text)]">
+              View-only PDF
+            </div>
+            <a
+              href={PANCHANGAM_PDF.pdfUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-xl border border-[rgba(201,162,77,0.55)] bg-white/55 px-4 py-2 text-sm font-semibold text-[color:var(--brand-text)] transition-colors hover:bg-white/75"
+            >
+              View Panchangam (PDF)
+            </a>
+          </div>
+
+          {/* Embedded viewer */}
+          <iframe
+            title={`Andhra Panchangam ${PANCHANGAM_PDF.yearLabel} PDF`}
+            src={PANCHANGAM_PDF.pdfUrl}
+            className="h-[520px] w-full"
+            loading="lazy"
+          />
+        </Card>
+
+        <div className="text-xs text-[color:var(--brand-text-muted)]">
+          PDF is placed as a static file (one per year). Replace the placeholder PDF with the official Panchangam when ready.
+        </div>
+      </section>
+
       {/* Mission */}
       <section className="grid gap-6 md:grid-cols-2 md:items-center">
         <SectionHeading
