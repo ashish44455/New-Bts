@@ -66,6 +66,20 @@ export default function ReferenceViewer() {
         <div className="mt-6 rounded-2xl border border-[rgba(201,162,77,0.28)] bg-white/30 p-6 text-sm text-[color:var(--brand-text-muted)]">
           PDF viewer will appear here after the document is uploaded.
           <div className="mt-2">(View-only • Download/Print disabled where technically possible)</div>
+
+          {/* Best-effort: When PDFs are added later, replace this with an embedded PDF renderer. */}
+          <div className="mt-5">
+            <div className="rounded-xl border border-[rgba(201,162,77,0.28)] bg-white/35 px-4 py-3 text-sm">
+              <div className="font-semibold text-[color:var(--brand-text)]">{cfg.message}</div>
+              <div className="mt-1 text-[color:var(--brand-text-muted)]">
+                Document is not available yet.
+              </div>
+              <div className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--brand-red)]">
+                <span>Return to Home</span>
+                <ChevronRight className="h-4 w-4" />
+              </div>
+            </div>
+          </div>
         </div>
       </Card>
 
