@@ -63,6 +63,9 @@ export default function Home() {
   const [api, setApi] = React.useState(null);
   const [activeSlide, setActiveSlide] = React.useState(0);
 
+  // ADD-ON 2 state: open/close per rasi
+  const [openRasi, setOpenRasi] = React.useState(null);
+
   React.useEffect(() => {
     if (!api) return;
 
