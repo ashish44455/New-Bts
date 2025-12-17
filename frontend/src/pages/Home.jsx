@@ -238,7 +238,7 @@ export default function Home() {
                 className="shrink-0"
                 aria-label={r.en}
               >
-                <div className="grid h-14 w-14 place-items-center rounded-2xl border border-[rgba(201,162,77,0.40)] bg-white/35 text-[color:var(--brand-gold)] transition-colors hover:bg-white/55 hover:text-[color:var(--brand-red)]">
+                <div className="grid h-14 w-14 place-items-center rounded-2xl border border-[rgba(201,162,77,0.40)] bg-white/35 text-[color:var(--brand-gold)] hover:bg-white/55 hover:text-[color:var(--brand-red)]">
                   <RasiIcon rasiKey={r.key} className="h-8 w-8" />
                 </div>
               </Link>
