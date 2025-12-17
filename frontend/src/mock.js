@@ -337,6 +337,8 @@ export const PANCHANGAM_PDF = {
     "సంప్రదాయ ఆంధ్ర పంచాంగం (ఆంధ్రప్రదేశ్, IST). ప్రజా సూచన కోసం అందించబడింది — వీక్షణ మాత్రమే.",
   // Placeholder file in /public
   pdfUrl: "/panchangam/andhra-panchangam-2026-2027.pdf",
+  // HTML wrapper that tries to show PDF inline (best-effort)
+  viewerUrl: "/panchangam/view-2026-2027.html",
 };
 
 export const STORE = {
