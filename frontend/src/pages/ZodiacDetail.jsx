@@ -72,11 +72,6 @@ export default function ZodiacDetail() {
         </div>
       </Card>
 
-      <div className="text-sm">
-        <Link to="/" className="font-semibold text-[color:var(--brand-red)]">
-          ← Back to Home
-        </Link>
-      </div>
     </div>
   );
 }
