@@ -100,6 +100,22 @@ export const AboutPage = () => {
       title="Sri Bala Tripura Sundari Seva Sadan"
       desc="A spiritual trust dedicated to traditional seva, guided personally and conducted in a devotional, non-commercial manner."
     >
+      {/* ADD-ON 1: Founder details inserted at the very top of About section */}
+      <Card className="rounded-3xl border-[rgba(201,162,77,0.35)] bg-white/35 p-6 shadow-[0_18px_55px_rgba(58,42,26,0.14)] backdrop-blur-[18px]">
+        <div className="font-display text-xl font-semibold text-[color:var(--brand-text)]">
+          {FOUNDER.headingEn}
+        </div>
+        <div className="mt-2 font-display text-2xl font-semibold text-[color:var(--brand-red)]">
+          {FOUNDER.name}
+        </div>
+        <p className="mt-3 text-sm leading-relaxed text-[color:var(--brand-text-muted)] md:text-base">
+          {FOUNDER.descEn}
+        </p>
+        <p className="mt-3 text-sm leading-relaxed text-[color:var(--brand-text-muted)] md:text-base">
+          {FOUNDER.descTe}
+        </p>
+      </Card>
+
       <div className="grid gap-6 md:grid-cols-2 md:items-start">
         <Card className="rounded-3xl border-[rgba(201,162,77,0.35)] bg-white/35 p-6 shadow-[0_18px_55px_rgba(58,42,26,0.14)] backdrop-blur-[18px]">
           <div className="font-display text-lg font-semibold text-[color:var(--brand-text)]">
