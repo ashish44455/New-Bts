@@ -300,7 +300,7 @@ export default function Home() {
               View-only PDF
             </div>
             <a
-              href={PANCHANGAM_PDF.pdfUrl}
+              href={PANCHANGAM_PDF.viewerUrl}
               target="_blank"
               rel="noreferrer"
               className="rounded-xl border border-[rgba(201,162,77,0.55)] bg-white/55 px-4 py-2 text-sm font-semibold text-[color:var(--brand-text)] transition-colors hover:bg-white/75"
