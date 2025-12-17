@@ -230,56 +230,23 @@ export default function Home() {
 
       {/* ADD-ON 2: Yearly Zodiac Predictions (2026–2027) */}
       <section className="space-y-6">
-        <SectionHeading
-          eyebrow={`${ZODIAC_2026_2027.titleEn} (${ZODIAC_2026_2027.yearLabel})`}
-          title={ZODIAC_2026_2027.titleTe}
-          desc={undefined}
-        />
-
-        <div className="max-w-3xl text-sm text-[color:var(--brand-text-muted)]">
-          <div>{ZODIAC_2026_2027.authorityEn}</div>
-          <div className="mt-1">{ZODIAC_2026_2027.authorityTe}</div>
+        {/* Icon-only display (no names on Home) */}
+        <div className="rounded-3xl border border-[rgba(201,162,77,0.35)] bg-white/30 px-3 py-3 shadow-[0_18px_55px_rgba(58,42,26,0.10)] backdrop-blur-[18px]">
+          <div className="flex w-full gap-2 overflow-x-auto px-1 py-1 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+            {ZODIAC_2026_2027.rasis.map((r) => (
+              <Link
+                key={r.key}
+                to={`/zodiac/${r.key}`}
+                className="shrink-0"
+                aria-label={r.en}
+              >
+                <div className="grid h-14 w-14 place-items-center rounded-2xl border border-[rgba(201,162,77,0.40)] bg-white/35 text-[color:var(--brand-gold)] transition-colors hover:bg-white/55 hover:text-[color:var(--brand-red)]">
+                  <RasiIcon rasiKey={r.key} className="h-8 w-8" />
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
-
-        <Card className="rounded-3xl border-[rgba(201,162,77,0.35)] bg-white/35 p-4 shadow-[0_18px_55px_rgba(58,42,26,0.12)] backdrop-blur-[18px] md:p-6">
-          <div className="divide-y divide-[rgba(201,162,77,0.24)]">
-            {ZODIAC_2026_2027.rasis.map((r) => {
-              const isOpen = openRasi === r.key;
-              return (
-                <button
-                  key={r.key}
-                  onClick={() => setOpenRasi((prev) => (prev === r.key ? null : r.key))}
-                  className="w-full text-left"
-                  aria-expanded={isOpen}
-                >
-                  <div className="flex items-center justify-between gap-3 py-4">
-                    <div className="font-display text-sm font-semibold text-[color:var(--brand-text)]">
-                      <span className="mr-3">{r.en}</span>
-                      <span className="text-[color:var(--brand-red)]">{r.te}</span>
-                    </div>
-                    <div className="text-[color:var(--brand-text-muted)]">
-                      {isOpen ? "–" : "+"}
-                    </div>
-                  </div>
-
-                  {isOpen ? (
-                    <div className="pb-5">
-                      <div className="space-y-3 text-sm text-[color:var(--brand-text-muted)]">
-                        <div>{r.textEn}</div>
-                        <div>{r.textTe}</div>
-                      </div>
-                    </div>
-                  ) : null}
-                </button>
-              );
-            })}
-          </div>
-
-          <div className="mt-4 text-xs text-[color:var(--brand-text-muted)]">
-            <div>{ZODIAC_2026_2027.disclaimerEn}</div>
-            <div className="mt-1">{ZODIAC_2026_2027.disclaimerTe}</div>
-          </div>
-        </Card>
       </section>
 
       {/* ADD-ON: Panchangam & Calendar (image placeholders -> internal view-only pages) */}
