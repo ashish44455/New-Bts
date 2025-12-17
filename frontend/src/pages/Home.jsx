@@ -309,11 +309,11 @@ export default function Home() {
             </a>
           </div>
 
-          {/* Embedded viewer */}
+          {/* View-only link (opens in-browser; no forced download) */}
           <iframe
             title={`Andhra Panchangam ${PANCHANGAM_PDF.yearLabel} PDF`}
             src={PANCHANGAM_PDF.viewerUrl}
-            className="h-[520px] w-full"
+            className="h-[120px] w-full"
             loading="lazy"
           />
         </Card>
