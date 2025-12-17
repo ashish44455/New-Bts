@@ -241,26 +241,38 @@ export default function Home() {
         </div>
 
         <Card className="rounded-3xl border-[rgba(201,162,77,0.35)] bg-white/35 p-4 shadow-[0_18px_55px_rgba(58,42,26,0.12)] backdrop-blur-[18px] md:p-6">
-          <Accordion type="single" collapsible className="w-full">
-            {ZODIAC_2026_2027.rasis.map((r) => (
-              <AccordionItem key={r.key} value={r.key} className="border-[rgba(201,162,77,0.28)]">
-                <AccordionTrigger className="text-left font-display text-[color:var(--brand-text)]">
-                  <span className="flex flex-wrap items-center gap-x-3 gap-y-1">
-                    <span className="font-semibold">{r.en}</span>
-                    <span className="text-sm font-semibold text-[color:var(--brand-red)]">
-                      {r.te}
-                    </span>
-                  </span>
-                </AccordionTrigger>
-                <AccordionContent className="text-sm text-[color:var(--brand-text-muted)]">
-                  <div className="space-y-3">
-                    <div>{r.textEn}</div>
-                    <div>{r.textTe}</div>
+          <div className="divide-y divide-[rgba(201,162,77,0.24)]">
+            {ZODIAC_2026_2027.rasis.map((r) => {
+              const isOpen = openRasi === r.key;
+              return (
+                <button
+                  key={r.key}
+                  onClick={() => setOpenRasi((prev) => (prev === r.key ? null : r.key))}
+                  className="w-full text-left"
+                  aria-expanded={isOpen}
+                >
+                  <div className="flex items-center justify-between gap-3 py-4">
+                    <div className="font-display text-sm font-semibold text-[color:var(--brand-text)]">
+                      <span className="mr-3">{r.en}</span>
+                      <span className="text-[color:var(--brand-red)]">{r.te}</span>
+                    </div>
+                    <div className="text-[color:var(--brand-text-muted)]">
+                      {isOpen ? "–" : "+"}
+                    </div>
                   </div>
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+
+                  {isOpen ? (
+                    <div className="pb-5">
+                      <div className="space-y-3 text-sm text-[color:var(--brand-text-muted)]">
+                        <div>{r.textEn}</div>
+                        <div>{r.textTe}</div>
+                      </div>
+                    </div>
+                  ) : null}
+                </button>
+              );
+            })}
+          </div>
 
           <div className="mt-4 text-xs text-[color:var(--brand-text-muted)]">
             <div>{ZODIAC_2026_2027.disclaimerEn}</div>
