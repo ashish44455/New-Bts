@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { Flame, Flower2, Star, CalendarHeart, ChevronRight } from "lucide-react";
 
+import { RasiIcon } from "@/components/RasiIcons";
+
 import { cn } from "@/lib/utils";
 import {
   ASTROLOGY,
