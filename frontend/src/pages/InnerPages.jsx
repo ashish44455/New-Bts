@@ -13,7 +13,15 @@ import {
 } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { ASTROLOGY, GALLERY, SERVICES, STORE, TRUST, buildWaMeLink } from "@/mock";
+import {
+  ASTROLOGY,
+  FOUNDER,
+  GALLERY,
+  SERVICES,
+  STORE,
+  TRUST,
+  buildWaMeLink,
+} from "@/mock";
 
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
