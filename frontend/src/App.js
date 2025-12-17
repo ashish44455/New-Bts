@@ -29,6 +29,8 @@ function App() {
             <Route path="/astrology" element={<AstrologyPage />} />
             <Route path="/gallery" element={<GalleryPage />} />
             <Route path="/store" element={<StorePage />} />
+            <Route path="/reference/:doc" element={<ReferenceViewer />} />
+
             <Route path="/contact" element={<ContactPage />} />
             <Route path="*" element={<NotFound />} />
 
