@@ -72,23 +72,40 @@ export default function ReferenceViewer() {
         onContextMenu={(e) => e.preventDefault()}
       >
         <div className="text-sm text-[color:var(--brand-text-muted)]">
-          {cfg.message}
+          <span lang="en" className="lang-en">Content will be updated soon.</span>
+          <span lang="te" className="lang-te">విషయం త్వరలో అప్‌డేట్ చేయబడుతుంది.</span>
         </div>
 
-        <div className="mt-6">
-          {/* If the PDF is missing, backend returns 204. pdf.js will fail to load and we show the message below. */}
-          <PdfCanvasViewer url={`${API}/reference/${cfg.apiDoc}`} />
-
-          <div className="mt-5 rounded-xl border border-[rgba(201,162,77,0.28)] bg-white/35 px-4 py-3 text-sm">
-            <div className="font-semibold text-[color:var(--brand-text)]">{cfg.message}</div>
-            <div className="mt-1 text-[color:var(--brand-text-muted)]">
-              Document is not available yet.
+        {/* 3 placeholders inside this reference page */}
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
+          {Array.from({ length: 3 }).map((_, idx) => (
+            <div
+              key={`ref-ph-${cfg.apiDoc}-${idx}`}
+              className="overflow-hidden rounded-3xl border border-[rgba(201,162,77,0.35)] bg-white/30 shadow-[0_18px_55px_rgba(58,42,26,0.12)] backdrop-blur-[18px]"
+            >
+              <div className="relative">
+                <img
+                  src={
+                    cfg.apiDoc === "panchangam"
+                      ? "https://images.unsplash.com/photo-1602305361939-806b254e9f47?auto=format&fit=crop&w=1400&q=80"
+                      : "https://images.unsplash.com/photo-1524443169398-9aa1ceab67d5?auto=format&fit=crop&w=1400&q=80"
+                  }
+                  alt="Placeholder"
+                  loading="lazy"
+                  className="h-40 w-full object-cover"
+                />
+                <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(58,42,26,0.55),transparent_70%)]" />
+              </div>
+              <div className="px-4 py-3">
+                <div lang="en" className="lang-en text-xs text-[color:var(--brand-text-muted)]">
+                  Content will be updated soon.
+                </div>
+                <div lang="te" className="lang-te text-xs text-[color:var(--brand-text-muted)]">
+                  విషయం త్వరలో అప్‌డేట్ చేయబడుతుంది.
+                </div>
+              </div>
             </div>
-            <div className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--brand-red)]">
-              <span>Return to Home</span>
-              <ChevronRight className="h-4 w-4" />
-            </div>
-          </div>
+          ))}
         </div>
       </Card>
 
