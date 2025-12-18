@@ -137,7 +137,10 @@ export const AboutPage = () => {
         <p className="mt-3 text-sm leading-relaxed text-[color:var(--brand-text-muted)] md:text-base">
           {FOUNDER.descEn}
         </p>
-        <p className="mt-3 text-sm leading-relaxed text-[color:var(--brand-text-muted)] md:text-base">
+        <p
+          lang="te"
+          className="mt-3 text-sm leading-relaxed text-[color:var(--brand-text-muted)] md:text-base"
+        >
           {FOUNDER.descTe}
         </p>
       </Card>

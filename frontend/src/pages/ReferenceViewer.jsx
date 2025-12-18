@@ -50,7 +50,10 @@ export default function ReferenceViewer() {
         <div className="font-display text-3xl font-semibold text-[color:var(--brand-text)] md:text-4xl">
           {cfg.titleEn}
         </div>
-        <div className="font-display text-2xl font-semibold text-[color:var(--brand-red)]">
+        <div
+          lang="te"
+          className="font-display text-2xl font-semibold text-[color:var(--brand-red)]"
+        >
           {cfg.titleTe}
         </div>
       </div>

@@ -37,7 +37,7 @@ export default function ZodiacDetail() {
         <Link to="/" className="font-semibold text-[color:var(--brand-red)]">
           ← Back to Home
         </Link>
-        <div className="mt-1 text-xs text-[color:var(--brand-text-muted)]">
+        <div lang="te" className="mt-1 text-xs text-[color:var(--brand-text-muted)]">
           హోమ్‌కు తిరిగి వెళ్ళండి
         </div>
       </div>
@@ -46,13 +46,18 @@ export default function ZodiacDetail() {
         <div className="font-display text-3xl font-semibold text-[color:var(--brand-text)] md:text-4xl">
           {titleEn}
         </div>
-        <div className="font-display text-2xl font-semibold text-[color:var(--brand-red)]">
+        <div
+          lang="te"
+          className="font-display text-2xl font-semibold text-[color:var(--brand-red)]"
+        >
           {item.te}
         </div>
 
         <div className="mt-3 text-sm text-[color:var(--brand-text-muted)]">
           <div>{ZODIAC_2026_2027.authorityEn}</div>
-          <div className="mt-1">{ZODIAC_2026_2027.authorityTe}</div>
+          <div lang="te" className="mt-1">
+            {ZODIAC_2026_2027.authorityTe}
+          </div>
         </div>
 
         <div className="mt-3 text-sm font-semibold text-[color:var(--brand-text)]">
@@ -63,12 +68,14 @@ export default function ZodiacDetail() {
       <Card className="rounded-3xl border-[rgba(201,162,77,0.35)] bg-white/35 p-6 shadow-[0_18px_55px_rgba(58,42,26,0.14)] backdrop-blur-[18px]">
         <div className="space-y-4 text-sm leading-relaxed text-[color:var(--brand-text-muted)] md:text-base">
           <div>{item.textEn}</div>
-          <div>{item.textTe}</div>
+          <div lang="te">{item.textTe}</div>
         </div>
 
         <div className="mt-6 border-t border-[rgba(201,162,77,0.24)] pt-4 text-xs text-[color:var(--brand-text-muted)]">
           <div>{ZODIAC_2026_2027.disclaimerEn}</div>
-          <div className="mt-1">{ZODIAC_2026_2027.disclaimerTe}</div>
+          <div lang="te" className="mt-1">
+            {ZODIAC_2026_2027.disclaimerTe}
+          </div>
         </div>
       </Card>
 
