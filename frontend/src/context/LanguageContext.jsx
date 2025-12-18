@@ -16,6 +16,13 @@ export const LanguageProvider = ({ children }) => {
       const saved = window.localStorage.getItem(STORAGE_KEY);
       if (saved === "en" || saved === "te") setLangState(saved);
     } catch {
+      // Reflect on document for CSS-based show/hide without layout changes
+      try {
+        document.documentElement.setAttribute("data-lang", saved);
+      } catch {
+        // ignore
+      }
+
       // ignore
     }
   }, []);
