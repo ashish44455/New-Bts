@@ -19,9 +19,10 @@ ROOT_DIR = Path(__file__).parent
 REFERENCE_DIR = ROOT_DIR / "storage" / "reference_pdfs"
 REFERENCE_DIR.mkdir(parents=True, exist_ok=True)
 
+# 3 PDFs per section (upload these files manually to backend/storage/reference_pdfs)
 ALLOWED_DOCS = {
-    "panchangam": "panchangam.pdf",
-    "calendar": "calendar.pdf",
+    "panchangam": ["panchangam_1.pdf", "panchangam_2.pdf", "panchangam_3.pdf"],
+    "calendar": ["calendar_1.pdf", "calendar_2.pdf", "calendar_3.pdf"],
 }
 
 load_dotenv(ROOT_DIR / '.env')
@@ -69,11 +70,19 @@ async def create_status_check(input: StatusCheckCreate):
 
 @api_router.get("/reference/{doc}")
 async def get_reference_pdf(doc: str):
-    # Best-effort protection: prevent direct file names and only allow known docs
+    # Backward compatible: serves slot 1
+    return await get_reference_pdf_slot(doc, 1)
+
+
+@api_router.get("/reference/{doc}/{slot}")
+async def get_reference_pdf_slot(doc: str, slot: int):
+    # Best-effort protection: allow only known docs and slots
     if doc not in ALLOWED_DOCS:
         raise HTTPException(status_code=404, detail="Not found")
+    if slot < 1 or slot > len(ALLOWED_DOCS[doc]):
+        raise HTTPException(status_code=404, detail="Not found")
 
-    file_path = REFERENCE_DIR / ALLOWED_DOCS[doc]
+    file_path = REFERENCE_DIR / ALLOWED_DOCS[doc][slot - 1]
     if not file_path.exists():
         # 204 indicates "no content" without exposing file
         return Response(status_code=204)
@@ -87,6 +96,17 @@ async def get_reference_pdf(doc: str):
                 if not chunk:
                     break
                 yield chunk
+
+
+@api_router.get("/reference/{doc}/{slot}/meta")
+async def get_reference_pdf_meta(doc: str, slot: int):
+    if doc not in ALLOWED_DOCS:
+        raise HTTPException(status_code=404, detail="Not found")
+    if slot < 1 or slot > len(ALLOWED_DOCS[doc]):
+        raise HTTPException(status_code=404, detail="Not found")
+
+    file_path = REFERENCE_DIR / ALLOWED_DOCS[doc][slot - 1]
+    return {"available": file_path.exists(), "doc": doc, "slot": slot}
 
     headers = {
         "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0",
