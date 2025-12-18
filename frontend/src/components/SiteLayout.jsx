@@ -158,6 +158,8 @@ export const SiteLayout = () => {
               value={lang}
               onValueChange={(v) => {
                 if (v === "en" || v === "te") setLang(v);
+              id="lang-toggle-mobile"
+
               }}
               className="rounded-full border border-[rgba(201,162,77,0.35)] bg-white/35 p-1 backdrop-blur-[18px]"
               aria-label="Language toggle"
