@@ -26,6 +26,12 @@ export const LanguageProvider = ({ children }) => {
       // ignore
     }
   }, []);
+    try {
+      document.documentElement.setAttribute("data-lang", next);
+    } catch {
+      // ignore
+    }
+
 
   const setLang = React.useCallback((next) => {
     setLangState(next);
