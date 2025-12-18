@@ -388,8 +388,18 @@ export default function Home() {
             className="mt-4 h-3 bg-[rgba(201,162,77,0.18)]"
           />
           <div className="mt-3 text-sm text-[color:var(--brand-text-muted)]">
-            This progress is displayed prominently to keep the sankalpa transparent and accountable.
+            <span lang="en" className="lang-en">
+              This progress is displayed prominently to keep the sankalpa transparent and accountable.
+            </span>
+            <span lang="te" className="lang-te">
+              సంకల్పం పారదర్శకంగా మరియు బాధ్యతాయుతంగా ఉండేందుకు ఈ ప్రగతి చూపబడుతుంది.
+            </span>
           </div>
+
+          <div className="mt-5">
+            <VisitedPeethasAccordion items={TRUST.visitedPeethas} />
+          </div>
+
           <div className="mt-5">
             <Button
               asChild
