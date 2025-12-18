@@ -37,12 +37,38 @@ export default function ZodiacDetail() {
         <Link to="/" className="font-semibold text-[color:var(--brand-red)]">
           ← Back to Home
         </Link>
-        <div lang="te" className="mt-1 text-xs text-[color:var(--brand-text-muted)]">
+        <div
+          lang="te"
+          className="mt-1 text-xs text-[color:var(--brand-text-muted)]"
+        >
           హోమ్‌కు తిరిగి వెళ్ళండి
         </div>
       </div>
 
       <div className="space-y-2">
+        {/* Titles always visible (both languages) */}
+        <div className="font-display text-3xl font-semibold text-[color:var(--brand-text)] md:text-4xl" lang="en">
+          {titleEn}
+        </div>
+        <div
+          lang="te"
+          className="font-display text-2xl font-semibold text-[color:var(--brand-red)]"
+        >
+          {item.te}
+        </div>
+
+        {/* Authority always visible (both languages) */}
+        <div className="mt-3 text-sm text-[color:var(--brand-text-muted)]">
+          <div lang="en">{ZODIAC_2026_2027.authorityEn}</div>
+          <div lang="te" className="mt-1">
+            {ZODIAC_2026_2027.authorityTe}
+          </div>
+        </div>
+
+        <div className="mt-3 text-sm font-semibold text-[color:var(--brand-text)]" lang="en">
+          Yearly Prediction – {ZODIAC_2026_2027.yearLabel}
+        </div>
+      </div>
         <div className="font-display text-3xl font-semibold text-[color:var(--brand-text)] md:text-4xl">
           {titleEn}
         </div>
