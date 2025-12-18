@@ -1,11 +1,8 @@
 import React from "react";
 import * as pdfjsLib from "pdfjs-dist";
 
-// Use the bundled worker from pdfjs-dist
-pdfjsLib.GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.mjs",
-  import.meta.url,
-).toString();
+// Use a static worker served from /public to avoid bundler edge cases
+pdfjsLib.GlobalWorkerOptions.workerSrc = "/pdf.worker.min.mjs";
 
 export const PdfCanvasViewer = ({ url }) => {
   const [status, setStatus] = React.useState({ type: "idle", message: "" });
