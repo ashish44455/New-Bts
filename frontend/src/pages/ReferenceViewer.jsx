@@ -26,6 +26,9 @@ export default function ReferenceViewer() {
   const { doc } = useParams();
   const cfg = meta[doc] || null;
 
+  const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+  const API = `${BACKEND_URL}/api`;
+
   if (!cfg) {
     return (
       <div className="mx-auto max-w-4xl space-y-6">
