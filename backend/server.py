@@ -14,6 +14,8 @@ from fastapi.responses import StreamingResponse
 from starlette.responses import Response
 
 
+ROOT_DIR = Path(__file__).parent
+
 REFERENCE_DIR = ROOT_DIR / "storage" / "reference_pdfs"
 REFERENCE_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -22,8 +24,6 @@ ALLOWED_DOCS = {
     "calendar": "calendar.pdf",
 }
 
-
-ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
 # MongoDB connection
