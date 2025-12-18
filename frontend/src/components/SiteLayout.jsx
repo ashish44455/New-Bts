@@ -154,12 +154,11 @@ export const SiteLayout = () => {
           <div className="flex items-center gap-2 lg:hidden">
             {/* Language toggle (mobile) */}
             <ToggleGroup
+              id="lang-toggle-mobile"
               type="single"
               value={lang}
               onValueChange={(v) => {
                 if (v === "en" || v === "te") setLang(v);
-              id="lang-toggle-mobile"
-
               }}
               className="rounded-full border border-[rgba(201,162,77,0.35)] bg-white/35 p-1 backdrop-blur-[18px]"
               aria-label="Language toggle"
