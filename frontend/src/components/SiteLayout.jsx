@@ -103,6 +103,35 @@ export const SiteLayout = () => {
             {navItems.map((it) => (
               <ActiveLink key={it.to} to={it.to}>
                 {it.label}
+
+          {/* Language toggle (unobtrusive) */}
+          <div className="hidden md:flex items-center">
+            <ToggleGroup
+              type="single"
+              value={lang}
+              onValueChange={(v) => {
+                if (v === "en" || v === "te") setLang(v);
+              }}
+              className="rounded-full border border-[rgba(201,162,77,0.35)] bg-white/35 p-1 backdrop-blur-[18px]"
+              aria-label="Language toggle"
+            >
+              <ToggleGroupItem
+                value="en"
+                className="h-8 rounded-full px-3 text-xs font-semibold data-[state=on]:bg-white/70 data-[state=on]:text-[color:var(--brand-red)]"
+                aria-label="English"
+              >
+                EN
+              </ToggleGroupItem>
+              <ToggleGroupItem
+                value="te"
+                className="h-8 rounded-full px-3 text-xs font-semibold data-[state=on]:bg-white/70 data-[state=on]:text-[color:var(--brand-red)]"
+                aria-label="Telugu"
+              >
+                తెలుగు
+              </ToggleGroupItem>
+            </ToggleGroup>
+          </div>
+
               </ActiveLink>
             ))}
           </nav>
