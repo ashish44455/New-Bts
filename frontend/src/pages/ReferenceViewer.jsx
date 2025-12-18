@@ -100,8 +100,8 @@ export default function ReferenceViewer() {
                   className="h-40 w-full object-cover"
                 />
                 <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(58,42,26,0.55),transparent_70%)]" />
-              </div>
-              <div className="px-4 py-3">
+                </div>
+                <div className="px-4 py-3">
                 <div lang="en" className="lang-en text-xs text-[color:var(--brand-text-muted)]">
                   Content will be updated soon.
                 </div>
