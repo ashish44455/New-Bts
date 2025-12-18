@@ -250,8 +250,8 @@ export default function Home() {
       {/* ADD-ON: Panchangam & Calendar (image placeholders -> internal view-only pages) */}
       <section className="space-y-6">
         <SectionHeading
-          eyebrow="Andhra Panchangam & Calendar"
-          title={<span lang="te">ఆంధ్ర పంచాంగం & కాలదర్శిని</span>}
+          eyebrow={<span lang="en" className="lang-en">Andhra Panchangam & Calendar</span>}
+          title={<span lang="te" className="lang-te">ఆంధ్ర పంచాంగం & కాలదర్శిని</span>}
           desc={undefined}
         />
 
