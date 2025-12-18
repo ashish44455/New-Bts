@@ -304,6 +304,29 @@ export default function Home() {
 
       {/* ADD-ON: Panchangam & Calendar (image placeholders -> internal view-only pages) */}
       <section className="space-y-6">
+        <Dialog
+          open={refModal.open}
+          onOpenChange={(o) => setRefModal((p) => ({ ...p, open: o }))}
+        >
+          <DialogContent className="max-w-2xl border-[rgba(201,162,77,0.45)] bg-[rgba(255,247,236,0.90)] backdrop-blur-[20px]">
+            <DialogHeader>
+              <DialogTitle className="font-display text-[color:var(--brand-text)]">
+                <span lang="en" className="lang-en">
+                  {refModal.kind === "panchangam" ? "Panchangam" : "Calendar"}
+                </span>
+                <span lang="te" className="lang-te">
+                  {refModal.kind === "panchangam" ? "పంచాంగం" : "కాలదర్శిని"}
+                </span>
+              </DialogTitle>
+            </DialogHeader>
+
+            <div className="rounded-2xl border border-[rgba(201,162,77,0.28)] bg-white/30 p-6 text-sm text-[color:var(--brand-text-muted)]">
+              <span lang="en" className="lang-en">Content will be updated soon.</span>
+              <span lang="te" className="lang-te">విషయం త్వరలో అప్‌డేట్ చేయబడుతుంది.</span>
+            </div>
+          </DialogContent>
+        </Dialog>
+
         <SectionHeading
           eyebrow={undefined}
           title={
