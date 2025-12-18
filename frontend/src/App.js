@@ -34,6 +34,8 @@ function App() {
               <Route path="/astrology" element={<AstrologyPage />} />
               <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/store" element={<StorePage />} />
+            <Route path="/reference/:doc/:slot" element={<ReferencePdfSlot />} />
+
               <Route path="/zodiac/:rasi" element={<ZodiacDetail />} />
 
               <Route path="/reference/:doc" element={<ReferenceViewer />} />
