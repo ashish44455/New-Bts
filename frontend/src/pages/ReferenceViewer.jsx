@@ -83,6 +83,11 @@ export default function ReferenceViewer() {
               key={`ref-ph-${cfg.apiDoc}-${idx}`}
               className="overflow-hidden rounded-3xl border border-[rgba(201,162,77,0.35)] bg-white/30 shadow-[0_18px_55px_rgba(58,42,26,0.12)] backdrop-blur-[18px]"
             >
+              <Link
+                to={`/reference/${cfg.apiDoc}/${idx + 1}`}
+                className="block"
+                aria-label={`Open ${cfg.apiDoc} document ${idx + 1}`}
+              >
               <div className="relative">
                 <img
                   src={
