@@ -108,7 +108,7 @@ export default function ReferenceViewer() {
                 <div lang="te" className="lang-te text-xs text-[color:var(--brand-text-muted)]">
                   విషయం త్వరలో అప్‌డేట్ చేయబడుతుంది.
                 </div>
-              </div>
+                </div>
               </Link>
             </div>
           ))}
