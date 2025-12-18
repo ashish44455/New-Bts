@@ -80,6 +80,20 @@
   font-family: var(--font-telugu);
 }
 
+/* Language toggle visibility helpers */
+.lang-en[lang="en"],
+.lang-te[lang="te"] {
+  display: block;
+}
+
+html[data-lang="te"] .lang-en {
+  display: none !important;
+}
+
+html[data-lang="en"] .lang-te {
+  display: none !important;
+}
+
 
 a:focus-visible,
 button:focus-visible {
