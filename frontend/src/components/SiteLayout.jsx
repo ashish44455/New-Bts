@@ -60,11 +60,10 @@ const ScrollToTop = () => {
   }, [pathname]);
   return null;
 };
-  const { lang, setLang } = useLanguage();
-
 
 export const SiteLayout = () => {
   const waLink = useMemo(() => buildWaMeLink(), []);
+  const { lang, setLang } = useLanguage();
 
   return (
     <div className="min-h-dvh bg-[color:var(--brand-ivory)] text-[color:var(--brand-text)]">
