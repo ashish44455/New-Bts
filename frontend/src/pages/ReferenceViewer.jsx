@@ -109,6 +109,7 @@ export default function ReferenceViewer() {
                   విషయం త్వరలో అప్‌డేట్ చేయబడుతుంది.
                 </div>
               </div>
+              </Link>
             </div>
           ))}
         </div>
