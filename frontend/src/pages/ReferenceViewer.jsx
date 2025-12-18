@@ -14,6 +14,7 @@ const meta = {
   calendar: {
     titleEn: "Andhra Calendar (PDF)",
     titleTe: "ఆంధ్ర కాలదర్శిని (PDF)",
+    titleTeLang: "te",
     message: "Calendar will be updated soon.",
   },
 };
