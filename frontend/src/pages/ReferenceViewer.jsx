@@ -7,17 +7,17 @@ import { PdfCanvasViewer } from "@/components/PdfCanvasViewer";
 
 const meta = {
   panchangam: {
-    titleEn: "Andhra Panchangam (PDF)",
-    titleTe: "ఆంధ్ర పంచాంగం (PDF)",
+    titleEn: "Andhra Panchangam",
+    titleTe: "ఆంధ్ర పంచాంగం",
     titleTeLang: "te",
-    message: "Panchangam will be updated soon.",
+    message: "Content will be updated soon.",
     apiDoc: "panchangam",
   },
   calendar: {
-    titleEn: "Andhra Calendar (PDF)",
-    titleTe: "ఆంధ్ర కాలదర్శిని (PDF)",
+    titleEn: "Andhra Calendar",
+    titleTe: "ఆంధ్ర కాలదర్శిని",
     titleTeLang: "te",
-    message: "Calendar will be updated soon.",
+    message: "Content will be updated soon.",
     apiDoc: "calendar",
   },
 };
