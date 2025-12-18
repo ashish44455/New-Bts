@@ -137,12 +137,12 @@ export const AboutPage = () => {
         <div className="mt-2 font-display text-2xl font-semibold text-[color:var(--brand-red)]">
           {FOUNDER.name}
         </div>
-        <p className="mt-3 text-sm leading-relaxed text-[color:var(--brand-text-muted)] md:text-base">
+        <p lang="en" className="lang-en mt-3 text-sm leading-relaxed text-[color:var(--brand-text-muted)] md:text-base">
           {FOUNDER.descEn}
         </p>
         <p
           lang="te"
-          className="mt-3 text-sm leading-relaxed text-[color:var(--brand-text-muted)] md:text-base"
+          className="lang-te mt-3 text-sm leading-relaxed text-[color:var(--brand-text-muted)] md:text-base"
         >
           {FOUNDER.descTe}
         </p>
