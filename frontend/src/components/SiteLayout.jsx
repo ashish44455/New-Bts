@@ -22,6 +22,8 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { Separator } from "@/components/ui/separator";
+import { ToggleGroup, ToggleGroupItem } from "@/components/ui/toggle-group";
+import { useLanguage } from "@/context/LanguageContext";
 
 const navItems = [
   { to: "/", label: "Home" },
