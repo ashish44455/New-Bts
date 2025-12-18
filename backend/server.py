@@ -14,6 +14,14 @@ from fastapi.responses import StreamingResponse
 from starlette.responses import Response
 
 
+REFERENCE_DIR = ROOT_DIR / "storage" / "reference_pdfs"
+REFERENCE_DIR.mkdir(parents=True, exist_ok=True)
+
+ALLOWED_DOCS = {
+    "panchangam": "panchangam.pdf",
+    "calendar": "calendar.pdf",
+}
+
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
