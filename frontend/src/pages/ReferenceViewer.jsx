@@ -11,12 +11,14 @@ const meta = {
     titleTe: "ఆంధ్ర పంచాంగం (PDF)",
     titleTeLang: "te",
     message: "Panchangam will be updated soon.",
+    apiDoc: "panchangam",
   },
   calendar: {
     titleEn: "Andhra Calendar (PDF)",
     titleTe: "ఆంధ్ర కాలదర్శిని (PDF)",
     titleTeLang: "te",
     message: "Calendar will be updated soon.",
+    apiDoc: "calendar",
   },
 };
 
