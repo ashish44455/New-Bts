@@ -101,6 +101,31 @@ export const AboutPage = () => {
       title="Sri Bala Tripura Sundari Seva Sadan"
       desc="A spiritual trust dedicated to traditional seva, guided personally and conducted in a devotional, non-commercial manner."
     >
+      {/* About: 5 blank photo placeholders (above Founder details) */}
+      <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-5">
+        {Array.from({ length: 5 }).map((_, idx) => (
+          <Card
+            key={`about-ph-${idx}`}
+            className="overflow-hidden rounded-3xl border-[rgba(201,162,77,0.35)] bg-white/30 shadow-[0_18px_55px_rgba(58,42,26,0.10)] backdrop-blur-[18px]"
+          >
+            <AspectRatio ratio={4 / 5}>
+              <div className="relative h-full w-full bg-[linear-gradient(135deg,rgba(255,255,255,0.45),rgba(255,255,255,0.18))]">
+                <div className="absolute inset-0" aria-hidden="true">
+                  <div className="absolute -left-8 -top-10 h-28 w-28 rounded-full bg-[radial-gradient(circle_at_center,rgba(201,162,77,0.25),transparent_62%)]" />
+                  <div className="absolute -bottom-10 -right-10 h-32 w-32 rounded-full bg-[radial-gradient(circle_at_center,rgba(139,30,30,0.16),transparent_62%)]" />
+                </div>
+                <div className="absolute inset-0 grid place-items-center">
+                  <div className="rounded-full border border-[rgba(201,162,77,0.40)] bg-white/25 px-3 py-1 text-[11px] font-semibold text-[color:var(--brand-text-muted)]">
+                    Photo Placeholder
+                  </div>
+                </div>
+              </div>
+            </AspectRatio>
+          </Card>
+        ))}
+      </div>
+
+
       {/* ADD-ON 1: Founder details inserted at the very top of About section */}
       <Card className="rounded-3xl border-[rgba(201,162,77,0.35)] bg-white/35 p-6 shadow-[0_18px_55px_rgba(58,42,26,0.14)] backdrop-blur-[18px]">
         <div className="font-display text-xl font-semibold text-[color:var(--brand-text)]">
