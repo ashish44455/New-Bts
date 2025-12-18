@@ -11,6 +11,16 @@ const LanguageContext = React.createContext({
 export const LanguageProvider = ({ children }) => {
   const [lang, setLangState] = React.useState("en");
 
+
+  React.useEffect(() => {
+    // default language
+    try {
+      document.documentElement.setAttribute("data-lang", "en");
+    } catch {
+      // ignore
+    }
+  }, []);
+
   React.useEffect(() => {
     try {
       const saved = window.localStorage.getItem(STORAGE_KEY);
