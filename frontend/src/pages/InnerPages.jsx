@@ -202,6 +202,10 @@ export const AboutPage = () => {
           <p className="mt-4 text-sm text-[color:var(--brand-text-muted)]">
             Progress is also displayed on the Home page as a trust marker.
           </p>
+
+          <div className="mt-5">
+            <VisitedPeethasAccordion items={TRUST.visitedPeethas} />
+          </div>
         </Card>
       </div>
     </PageShell>
