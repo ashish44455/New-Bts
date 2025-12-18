@@ -152,11 +152,14 @@
 ##     file: "/app/backend/server.py"
 ##     stuck_count: 0
 ##     priority: "high"
-##     needs_retesting: true
+##     needs_retesting: false
 ##     status_history:
 ##       - working: true
 ##         agent: "main"
 ##         comment: "Added /api/reference/{doc} endpoint streaming panchangam/calendar from backend/storage/reference_pdfs. Returns 204 if missing. Adds no-store + CSP frame-ancestors self."
+##       - working: true
+##         agent: "testing"
+##         comment: "Comprehensive backend testing completed successfully. All 5 test scenarios passed: 1) GET /api/ returns Hello World (200), 2) GET /api/reference/panchangam returns 200 with application/pdf content-type, 3) GET /api/reference/calendar returns 200 with application/pdf content-type, 4) GET /api/reference/unknown returns 404, 5) Both PDF endpoints include required headers: Cache-Control no-store and Content-Security-Policy frame-ancestors 'self'. PDF files exist in backend/storage/reference_pdfs/. Backend logs show no errors."
 ## frontend:
 ##   - task: "Language toggle state + persistence (localStorage)"
 ##     implemented: true
