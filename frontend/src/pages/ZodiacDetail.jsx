@@ -69,27 +69,6 @@ export default function ZodiacDetail() {
           Yearly Prediction – {ZODIAC_2026_2027.yearLabel}
         </div>
       </div>
-        <div className="font-display text-3xl font-semibold text-[color:var(--brand-text)] md:text-4xl">
-          {titleEn}
-        </div>
-        <div
-          lang="te"
-          className="font-display text-2xl font-semibold text-[color:var(--brand-red)]"
-        >
-          {item.te}
-        </div>
-
-        <div className="mt-3 text-sm text-[color:var(--brand-text-muted)]">
-          <div>{ZODIAC_2026_2027.authorityEn}</div>
-          <div lang="te" className="mt-1">
-            {ZODIAC_2026_2027.authorityTe}
-          </div>
-        </div>
-
-        <div className="mt-3 text-sm font-semibold text-[color:var(--brand-text)]">
-          Yearly Prediction – {ZODIAC_2026_2027.yearLabel}
-        </div>
-      </div>
 
       <Card className="rounded-3xl border-[rgba(201,162,77,0.35)] bg-white/35 p-6 shadow-[0_18px_55px_rgba(58,42,26,0.14)] backdrop-blur-[18px]">
         <div className="space-y-4 text-sm leading-relaxed text-[color:var(--brand-text-muted)] md:text-base">
