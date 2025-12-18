@@ -143,4 +143,73 @@
 ##   - agent: "testing"
 ##     message: "Completed comprehensive UI testing. All major functionality working correctly. Navigation, WhatsApp CTAs, carousel, services tabs, gallery lightbox, 404 page, and noscript content all tested successfully. Minor issue with mobile menu navigation timeout but menu opens correctly. All WhatsApp links contain correct wa.me/919676040411 URLs with devotional message 'Namaskaram 🙏 I would like to enquire about your services. Kindly guide me on the process.' Ready for production."
 
+
+## user_problem_statement: "Add language toggle (EN⇄తెలుగు) and view-only Panchangam/Calendar PDF rendering with backend streaming, plus enforce language-specific visibility on specified bilingual sections."
+## backend:
+##   - task: "Serve reference PDFs via /api/reference/{doc} with streaming + anti-download headers"
+##     implemented: true
+##     working: true
+##     file: "/app/backend/server.py"
+##     stuck_count: 0
+##     priority: "high"
+##     needs_retesting: true
+##     status_history:
+##       - working: true
+##         agent: "main"
+##         comment: "Added /api/reference/{doc} endpoint streaming panchangam/calendar from backend/storage/reference_pdfs. Returns 204 if missing. Adds no-store + CSP frame-ancestors self."
+## frontend:
+##   - task: "Language toggle state + persistence (localStorage)"
+##     implemented: true
+##     working: true
+##     file: "/app/frontend/src/context/LanguageContext.jsx, /app/frontend/src/components/SiteLayout.jsx"
+##     stuck_count: 1
+##     priority: "high"
+##     needs_retesting: true
+##     status_history:
+##       - working: false
+##         agent: "main"
+##         comment: "Initial toggle click did not update data-lang; fixed LanguageContext to correctly set data-lang + localStorage and added mobile toggle."
+##       - working: true
+##         agent: "main"
+##         comment: "Verified persistence: data-lang becomes 'te' and remains after reload."
+##   - task: "Language visibility enforcement (show only selected language) for zodiac pages + founder + bilingual headings"
+##     implemented: true
+##     working: true
+##     file: "/app/frontend/src/index.css, /app/frontend/src/pages/ZodiacDetail.jsx, /app/frontend/src/pages/InnerPages.jsx, /app/frontend/src/pages/Home.jsx"
+##     stuck_count: 0
+##     priority: "high"
+##     needs_retesting: true
+##     status_history:
+##       - working: true
+##         agent: "main"
+##         comment: "Implemented .lang-en/.lang-te hide/show via html[data-lang]. Marked bilingual blocks with lang + lang-en/lang-te classes."
+##   - task: "View-only PDF rendering for Panchangam/Calendar (no direct public URL)"
+##     implemented: true
+##     working: true
+##     file: "/app/frontend/src/pages/ReferenceViewer.jsx, /app/frontend/src/components/PdfCanvasViewer.jsx"
+##     stuck_count: 0
+##     priority: "high"
+##     needs_retesting: true
+##     status_history:
+##       - working: true
+##         agent: "main"
+##         comment: "Uses pdfjs-dist worker served from /public and renders first page to canvas from backend API endpoint; disables right-click and avoids browser PDF viewer UI."
+## metadata:
+##   created_by: "main_agent"
+##   version: "1.1"
+##   test_sequence: 2
+##   run_ui: true
+## test_plan:
+##   current_focus:
+##     - "Language toggle state + persistence (localStorage)"
+##     - "Language visibility enforcement (show only selected language) for zodiac pages + founder + bilingual headings"
+##     - "View-only PDF rendering for Panchangam/Calendar (no direct public URL)"
+##     - "Serve reference PDFs via /api/reference/{doc} with streaming + anti-download headers"
+##   stuck_tasks: []
+##   test_all: true
+##   test_priority: "high_first"
+## agent_communication:
+##   - agent: "main"
+##     message: "Please verify: language toggle works on desktop+mobile, persists across reload and navigation; zodiac pages show ONLY selected language; about founder bilingual blocks respect toggle; Panchangam/Calendar reference pages render PDF via canvas and do not show download/print UI; backend returns 204 when missing and 200 when present with anti-cache headers."
+
 #====================================================================================================
