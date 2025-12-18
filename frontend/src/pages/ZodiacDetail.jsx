@@ -86,5 +86,6 @@ export default function ZodiacDetail() {
       </Card>
 
     </div>
+    </>
   );
 }
