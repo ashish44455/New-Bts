@@ -3,7 +3,7 @@ import NotFound from "@/pages/NotFound";
 import ReferenceViewer from "@/pages/ReferenceViewer";
 import ZodiacDetail from "@/pages/ZodiacDetail";
 
-
+import { LanguageProvider } from "@/context/LanguageContext";
 
 import "@/App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
