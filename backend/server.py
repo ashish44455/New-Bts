@@ -66,6 +66,38 @@ async def create_status_check(input: StatusCheckCreate):
     _ = await db.status_checks.insert_one(doc)
     return status_obj
 
+
+@api_router.get("/reference/{doc}")
+async def get_reference_pdf(doc: str):
+    # Best-effort protection: prevent direct file names and only allow known docs
+    if doc not in ALLOWED_DOCS:
+        raise HTTPException(status_code=404, detail="Not found")
+
+    file_path = REFERENCE_DIR / ALLOWED_DOCS[doc]
+    if not file_path.exists():
+        # 204 indicates "no content" without exposing file
+        return Response(status_code=204)
+
+    # Stream the PDF. We do not provide Content-Disposition attachment.
+    # Add headers to discourage caching and embedding outside.
+    def iterfile():
+        with open(file_path, "rb") as f:
+            while True:
+                chunk = f.read(1024 * 256)
+                if not chunk:
+                    break
+                yield chunk
+
+    headers = {
+        "Cache-Control": "no-store, no-cache, must-revalidate, max-age=0",
+        "Pragma": "no-cache",
+        "X-Content-Type-Options": "nosniff",
+        "Content-Security-Policy": "frame-ancestors 'self'",
+        "Cross-Origin-Resource-Policy": "same-site",
+    }
+
+    return StreamingResponse(iterfile(), media_type="application/pdf", headers=headers)
+
 @api_router.get("/status", response_model=List[StatusCheck])
 async def get_status_checks():
     # Exclude MongoDB's _id field from the query results
