@@ -149,7 +149,7 @@ export const SiteLayout = () => {
           </div>
 
           {/* Mobile */}
-          <div className="flex items-center gap-2 md:hidden">
+          <div className="flex items-center gap-2 lg:hidden">
             {/* Language toggle (mobile) */}
             <ToggleGroup
               type="single"
