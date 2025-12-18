@@ -298,31 +298,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ADD-ON: Panchangam & Calendar (image placeholders -> internal view-only pages) */}
+      {/* ADD-ON: Panchangam & Calendar (image tiles linking to view-only reference pages) */}
       <section className="space-y-6">
-        <Dialog
-          open={refModal.open}
-          onOpenChange={(o) => setRefModal((p) => ({ ...p, open: o }))}
-        >
-          <DialogContent className="max-w-2xl border-[rgba(201,162,77,0.45)] bg-[rgba(255,247,236,0.90)] backdrop-blur-[20px]">
-            <DialogHeader>
-              <DialogTitle className="font-display text-[color:var(--brand-text)]">
-                <span lang="en" className="lang-en">
-                  {refModal.kind === "panchangam" ? "Panchangam" : "Calendar"}
-                </span>
-                <span lang="te" className="lang-te">
-                  {refModal.kind === "panchangam" ? "పంచాంగం" : "కాలదర్శిని"}
-                </span>
-              </DialogTitle>
-            </DialogHeader>
-
-            <div className="rounded-2xl border border-[rgba(201,162,77,0.28)] bg-white/30 p-6 text-sm text-[color:var(--brand-text-muted)]">
-              <span lang="en" className="lang-en">Content will be updated soon.</span>
-              <span lang="te" className="lang-te">విషయం త్వరలో అప్‌డేట్ చేయబడుతుంది.</span>
-            </div>
-          </DialogContent>
-        </Dialog>
-
         <SectionHeading
           eyebrow={undefined}
           title={
@@ -339,64 +316,53 @@ export default function Home() {
         />
 
         <div className="grid gap-4 md:grid-cols-2">
-          {/* Panchangam: 3 placeholders */}
-          {Array.from({ length: 3 }).map((_, idx) => (
-            <button
-              key={`panchangam-ph-${idx}`}
-              type="button"
-              onClick={() => setRefModal({ open: true, kind: "panchangam" })}
-              className="overflow-hidden rounded-3xl border border-[rgba(201,162,77,0.35)] bg-white/30 text-left shadow-[0_18px_55px_rgba(58,42,26,0.12)] backdrop-blur-[18px]"
-              aria-label="View Panchangam"
-            >
-              <div className="relative">
-                <img
-                  src="https://images.unsplash.com/photo-1602305361939-806b254e9f47?auto=format&fit=crop&w=1600&q=80"
-                  alt="Panchangam placeholder"
-                  loading="lazy"
-                  className="h-52 w-full object-cover"
-                />
-                <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(58,42,26,0.55),transparent_65%)]" />
+          <Link
+            to="/reference/panchangam"
+            className="overflow-hidden rounded-3xl border border-[rgba(201,162,77,0.35)] bg-white/30 shadow-[0_18px_55px_rgba(58,42,26,0.12)] backdrop-blur-[18px]"
+            aria-label="View Panchangam"
+          >
+            <div className="relative">
+              <img
+                src="https://images.unsplash.com/photo-1602305361939-806b254e9f47?auto=format&fit=crop&w=1600&q=80"
+                alt="Panchangam placeholder"
+                loading="lazy"
+                className="h-52 w-full object-cover"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(58,42,26,0.55),transparent_65%)]" />
+            </div>
+            <div className="px-5 py-4">
+              <div lang="en" className="lang-en text-xs text-[color:var(--brand-text-muted)]">
+                View Panchangam
               </div>
-              <div className="px-5 py-4">
-                <div lang="en" className="lang-en text-xs text-[color:var(--brand-text-muted)]">
-                  Content will be updated soon.
-                </div>
-                <div lang="te" className="lang-te text-xs text-[color:var(--brand-text-muted)]">
-                  విషయం త్వరలో అప్‌డేట్ చేయబడుతుంది.
-                </div>
+              <div lang="te" className="lang-te text-xs text-[color:var(--brand-text-muted)]">
+                పంచాంగం చూడండి
               </div>
-            </button>
-          ))}
+            </div>
+          </Link>
 
-          {/* Calendar: 3 placeholders */}
-          {Array.from({ length: 3 }).map((_, idx) => (
-            <button
-              key={`calendar-ph-${idx}`}
-              type="button"
-              onClick={() => setRefModal({ open: true, kind: "calendar" })}
-              className="overflow-hidden rounded-3xl border border-[rgba(201,162,77,0.35)] bg-white/30 text-left shadow-[0_18px_55px_rgba(58,42,26,0.12)] backdrop-blur-[18px]"
-              aria-label="View Calendar"
-            >
-              <div className="relative">
-                <img
-                  src="https://images.unsplash.com/photo-1524443169398-9aa1ceab67d5?auto=format&fit=crop&w=1600&q=80"
-                  alt="Calendar placeholder"
-                  loading="lazy"
-                  className="h-52 w-full object-cover"
-                />
-                <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(58,42,26,0.55),transparent_65%)]" />
+          <Link
+            to="/reference/calendar"
+            className="overflow-hidden rounded-3xl border border-[rgba(201,162,77,0.35)] bg-white/30 shadow-[0_18px_55px_rgba(58,42,26,0.12)] backdrop-blur-[18px]"
+            aria-label="View Calendar"
+          >
+            <div className="relative">
+              <img
+                src="https://images.unsplash.com/photo-1524443169398-9aa1ceab67d5?auto=format&fit=crop&w=1600&q=80"
+                alt="Calendar placeholder"
+                loading="lazy"
+                className="h-52 w-full object-cover"
+              />
+              <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(58,42,26,0.55),transparent_65%)]" />
+            </div>
+            <div className="px-5 py-4">
+              <div lang="en" className="lang-en text-xs text-[color:var(--brand-text-muted)]">
+                View Calendar
               </div>
-              <div className="px-5 py-4">
-                <div lang="en" className="lang-en text-xs text-[color:var(--brand-text-muted)]">
-                  Content will be updated soon.
-                </div>
-                <div lang="te" className="lang-te text-xs text-[color:var(--brand-text-muted)]">
-                  విషయం త్వరలో అప్‌డేట్ చేయబడుతుంది.
-                </div>
+              <div lang="te" className="lang-te text-xs text-[color:var(--brand-text-muted)]">
+                కాలదర్శిని చూడండి
               </div>
-            </button>
-          ))}
-          {/* Panchangam and Calendar tiles removed */}
+            </div>
+          </Link>
         </div>
       </section>
 
