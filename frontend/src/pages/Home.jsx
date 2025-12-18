@@ -438,9 +438,28 @@ export default function Home() {
       {/* Services at a glance */}
       <section className="space-y-6">
         <SectionHeading
-          eyebrow="Our Services at a Glance"
-          title="Traditional services — guided personally"
-          desc="Every seva is coordinated through WhatsApp to preserve authenticity, clarity, and personal guidance."
+          eyebrow={
+            <>
+              <span lang="en" className="lang-en">Our Services at a Glance</span>
+              <span lang="te" className="lang-te">మా సేవలు — సంక్షిప్తంగా</span>
+            </>
+          }
+          title={
+            <>
+              <span lang="en" className="lang-en">Traditional services — guided personally</span>
+              <span lang="te" className="lang-te">సంప్రదాయ సేవలు — వ్యక్తిగత మార్గదర్శనంతో</span>
+            </>
+          }
+          desc={
+            <>
+              <span lang="en" className="lang-en">
+                Every seva is coordinated through WhatsApp to preserve authenticity, clarity, and personal guidance.
+              </span>
+              <span lang="te" className="lang-te">
+                ప్రామాణికత, స్పష్టత మరియు వ్యక్తిగత మార్గదర్శనాన్ని నిలుపుకోవడానికి ప్రతి సేవ WhatsApp ద్వారా సమన్వయం చేయబడుతుంది.
+              </span>
+            </>
+          }
         />
 
         <div className="grid gap-4 md:grid-cols-4">
