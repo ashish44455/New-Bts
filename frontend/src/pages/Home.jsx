@@ -33,6 +33,7 @@ import {
 } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { VisitedPeethasAccordion } from "@/components/VisitedPeethasAccordion";
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 const IconBadge = ({ icon: Icon, label }) => (
   <div className="flex items-center gap-2 rounded-full border border-[rgba(201,162,77,0.38)] bg-white/35 px-3 py-1.5 text-xs font-semibold text-[color:var(--brand-text)] backdrop-blur-[16px]">
@@ -64,6 +65,9 @@ export default function Home() {
   const waLink = React.useMemo(() => buildWaMeLink(), []);
   const [api, setApi] = React.useState(null);
   const [activeSlide, setActiveSlide] = React.useState(0);
+
+  // Home-only: Panchangam/Calendar placeholders modal
+  const [refModal, setRefModal] = React.useState({ open: false, kind: null });
 
 
   React.useEffect(() => {
@@ -144,7 +148,8 @@ export default function Home() {
                 className="h-11 rounded-xl bg-[color:var(--brand-red)] px-6 text-[color:var(--brand-ivory)] shadow-[0_18px_32px_rgba(139,30,30,0.22)] hover:bg-[color:var(--brand-red-hover)]"
               >
                 <a href={waLink} target="_blank" rel="noreferrer">
-                  Book via WhatsApp
+                  <span lang="en" className="lang-en">Book via WhatsApp</span>
+                  <span lang="te" className="lang-te">WhatsApp ద్వారా బుక్ చేయండి</span>
                 </a>
               </Button>
               <Button
@@ -153,7 +158,8 @@ export default function Home() {
                 className="h-11 rounded-xl border-[rgba(201,162,77,0.55)] bg-white/55 px-6 text-[color:var(--brand-text)] backdrop-blur-[16px] hover:bg-white/75"
               >
                 <a href={waLink} target="_blank" rel="noreferrer">
-                  Consult via WhatsApp
+                  <span lang="en" className="lang-en">Consult via WhatsApp</span>
+                  <span lang="te" className="lang-te">WhatsApp ద్వారా సంప్రదించండి</span>
                 </a>
               </Button>
             </div>
@@ -369,9 +375,23 @@ export default function Home() {
       {/* Mission */}
       <section className="grid gap-6 md:grid-cols-2 md:items-center">
         <SectionHeading
-          eyebrow="Our Sacred Mission"
+          eyebrow={
+            <>
+              <span lang="en" className="lang-en">Our Sacred Mission</span>
+              <span lang="te" className="lang-te">మా పవిత్ర సేవా సంకల్పం</span>
+            </>
+          }
           title={TRUST.moto}
-          desc="Our seva is dedicated to the Ashtadasa Shakti Peethas. This sankalpa is a living commitment — not a campaign."
+          desc={
+            <>
+              <span lang="en" className="lang-en">
+                Our seva is dedicated to the Ashtadasa Shakti Peethas. This sankalpa is a living commitment — not a campaign.
+              </span>
+              <span lang="te" className="lang-te">
+                మా సేవ అష్టాదశ శక్తి పీఠాల సంప్రదాయానికి అంకితం. ఇది ఒక జీవంతమైన సంకల్పం — ప్రచారం కాదు.
+              </span>
+            </>
+          }
         />
 
         <Card className="rounded-3xl border-[rgba(201,162,77,0.35)] bg-white/35 p-6 shadow-[0_18px_55px_rgba(58,42,26,0.14)] backdrop-blur-[18px] md:p-8">
