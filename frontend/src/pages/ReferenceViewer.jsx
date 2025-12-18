@@ -8,6 +8,7 @@ const meta = {
   panchangam: {
     titleEn: "Andhra Panchangam (PDF)",
     titleTe: "ఆంధ్ర పంచాంగం (PDF)",
+    titleTeLang: "te",
     message: "Panchangam will be updated soon.",
   },
   calendar: {
