@@ -11,52 +11,50 @@ const LanguageContext = React.createContext({
 export const LanguageProvider = ({ children }) => {
   const [lang, setLangState] = React.useState("en");
 
-
-  React.useEffect(() => {
-    // default language
-    try {
-      document.documentElement.setAttribute("data-lang", "en");
-    } catch {
-      // ignore
-    }
-  }, []);
-
-  React.useEffect(() => {
-    try {
-      const saved = window.localStorage.getItem(STORAGE_KEY);
-      if (saved === "en" || saved === "te") setLangState(saved);
-    } catch {
-      // Reflect on document for CSS-based show/hide without layout changes
-      try {
-        document.documentElement.setAttribute("data-lang", saved);
-      } catch {
-        // ignore
-      }
-
-      // ignore
-    }
-  }, []);
+  const applyToDocument = React.useCallback((next) => {
     try {
       document.documentElement.setAttribute("data-lang", next);
     } catch {
       // ignore
     }
+  }, []);
 
-
-  const setLang = React.useCallback((next) => {
-    setLangState(next);
+  // Init from storage (or English default)
+  React.useEffect(() => {
+    let initial = "en";
     try {
-      window.localStorage.setItem(STORAGE_KEY, next);
+      const saved = window.localStorage.getItem(STORAGE_KEY);
+      if (saved === "en" || saved === "te") initial = saved;
     } catch {
       // ignore
     }
-  }, []);
+
+    setLangState(initial);
+    applyToDocument(initial);
+  }, [applyToDocument]);
+
+  const setLang = React.useCallback(
+    (next) => {
+      if (next !== "en" && next !== "te") return;
+      setLangState(next);
+      applyToDocument(next);
+      try {
+        window.localStorage.setItem(STORAGE_KEY, next);
+      } catch {
+        // ignore
+      }
+    },
+    [applyToDocument],
+  );
 
   const toggleLang = React.useCallback(() => {
-    setLang((prev) => (prev === "te" ? "en" : "te"));
-  }, [setLang]);
+    setLang(lang === "te" ? "en" : "te");
+  }, [lang, setLang]);
 
-  const value = React.useMemo(() => ({ lang, setLang, toggleLang }), [lang, setLang, toggleLang]);
+  const value = React.useMemo(
+    () => ({ lang, setLang, toggleLang }),
+    [lang, setLang, toggleLang],
+  );
 
   return (
     <LanguageContext.Provider value={value}>{children}</LanguageContext.Provider>
