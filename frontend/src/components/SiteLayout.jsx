@@ -103,6 +103,9 @@ export const SiteLayout = () => {
             {navItems.map((it) => (
               <ActiveLink key={it.to} to={it.to}>
                 {it.label}
+              </ActiveLink>
+            ))}
+          </nav>
 
           {/* Language toggle (unobtrusive) */}
           <div className="hidden md:flex items-center">
@@ -124,6 +127,7 @@ export const SiteLayout = () => {
               </ToggleGroupItem>
               <ToggleGroupItem
                 value="te"
+                lang="te"
                 className="h-8 rounded-full px-3 text-xs font-semibold data-[state=on]:bg-white/70 data-[state=on]:text-[color:var(--brand-red)]"
                 aria-label="Telugu"
               >
@@ -131,10 +135,6 @@ export const SiteLayout = () => {
               </ToggleGroupItem>
             </ToggleGroup>
           </div>
-
-              </ActiveLink>
-            ))}
-          </nav>
 
           {/* Desktop CTA */}
           <div className="hidden items-center gap-2 md:flex">
