@@ -31,8 +31,8 @@ export default function ZodiacDetail() {
   const titleEn = item.en.split(" (")[0];
 
   return (
-    <> 
-    <div className="mx-auto max-w-5xl space-y-6">
+    <>
+      <div className="mx-auto max-w-5xl space-y-6">
       {/* Back navigation (explicit route to Home) */}
       <div className="text-sm">
         <Link to="/" className="font-semibold text-[color:var(--brand-red)]">
