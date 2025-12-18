@@ -60,6 +60,8 @@ const ScrollToTop = () => {
   }, [pathname]);
   return null;
 };
+  const { lang, setLang } = useLanguage();
+
 
 export const SiteLayout = () => {
   const waLink = useMemo(() => buildWaMeLink(), []);
