@@ -69,6 +69,47 @@
   font-family: "Cormorant Garamond", ui-serif, Georgia;
 }
 
+/* Telugu font support (applies ONLY to Telugu text) */
+:root {
+  --font-telugu: "Noto Serif Telugu", "Noto Sans Telugu", "Pothana2000", "Mallanna", serif;
+}
+
+/* Manual opt-in (preferred for specific Telugu spans/blocks) */
+.telugu,
+[lang="te"] {
+  font-family: var(--font-telugu);
+}
+
+/* Auto-apply Telugu font if the element contains Telugu Unicode range.
+   This targets text nodes in Telugu script without changing English typography. */
+:where(p, span, a, li, h1, h2, h3, h4, h5, h6, label, small, strong, em):has(:not(script, style)) {
+  /* no-op: keeps selector group in same layer */
+}
+
+:where(p, span, a, li, h1, h2, h3, h4, h5, h6, label, small, strong, em):has(
+    :is(
+      span,
+      b,
+      i,
+      em,
+      strong
+    )[lang="te"],
+    :is(
+      span,
+      b,
+      i,
+      em,
+      strong
+    ).telugu
+  ) {
+  /* If nested elements are marked telugu, inherit font for the subtree */
+  font-family: inherit;
+}
+
+/* Robust auto-detect using unicode-range via attribute: set lang="te" where possible.
+   For places we cannot set lang, we add .telugu class in components. */
+
+
 a:focus-visible,
 button:focus-visible {
   outline: 2px solid rgba(201, 162, 77, 0.85);
