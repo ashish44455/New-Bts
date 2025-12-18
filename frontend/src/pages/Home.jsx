@@ -33,7 +33,6 @@ import {
 } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { VisitedPeethasAccordion } from "@/components/VisitedPeethasAccordion";
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 
 const IconBadge = ({ icon: Icon, label }) => (
   <div className="flex items-center gap-2 rounded-full border border-[rgba(201,162,77,0.38)] bg-white/35 px-3 py-1.5 text-xs font-semibold text-[color:var(--brand-text)] backdrop-blur-[16px]">
@@ -65,9 +64,6 @@ export default function Home() {
   const waLink = React.useMemo(() => buildWaMeLink(), []);
   const [api, setApi] = React.useState(null);
   const [activeSlide, setActiveSlide] = React.useState(0);
-
-  // Home-only: Panchangam/Calendar placeholders modal
-  const [refModal, setRefModal] = React.useState({ open: false, kind: null });
 
 
   React.useEffect(() => {
