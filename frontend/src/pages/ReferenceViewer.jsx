@@ -3,7 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import { ChevronRight } from "lucide-react";
 
 import { Card } from "@/components/ui/card";
-import { PdfCanvasViewer } from "@/components/PdfCanvasViewer";
+// PdfCanvasViewer intentionally not used here (PDFs not added yet)
 
 const meta = {
   panchangam: {
