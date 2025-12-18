@@ -35,6 +35,7 @@ import {
 } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
+import { VisitedPeethasAccordion } from "@/components/VisitedPeethasAccordion";
 
 const PageShell = ({ eyebrow, title, desc, children }) => (
   <div className="space-y-8">

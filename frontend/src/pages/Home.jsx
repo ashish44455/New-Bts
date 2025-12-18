@@ -32,6 +32,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
+import { VisitedPeethasAccordion } from "@/components/VisitedPeethasAccordion";
 
 const IconBadge = ({ icon: Icon, label }) => (
   <div className="flex items-center gap-2 rounded-full border border-[rgba(201,162,77,0.38)] bg-white/35 px-3 py-1.5 text-xs font-semibold text-[color:var(--brand-text)] backdrop-blur-[16px]">
