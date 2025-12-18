@@ -49,7 +49,7 @@ const SectionHeading = ({ eyebrow, title, desc, align = "left" }) => (
       </div>
     ) : null}
     <h2 className="font-display text-2xl font-semibold tracking-tight text-[color:var(--brand-text)] md:text-3xl">
-      {title}
+      {typeof title === "string" ? title : title}
     </h2>
     {desc ? (
       <p className="mt-3 text-sm leading-relaxed text-[color:var(--brand-text-muted)] md:text-base">
