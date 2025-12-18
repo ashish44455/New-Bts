@@ -2,6 +2,8 @@ import React from "react";
 import NotFound from "@/pages/NotFound";
 import ReferenceViewer from "@/pages/ReferenceViewer";
 import ZodiacDetail from "@/pages/ZodiacDetail";
+import ReferencePdfSlot from "@/pages/ReferencePdfSlot";
+
 
 import { LanguageProvider } from "@/context/LanguageContext";
 
