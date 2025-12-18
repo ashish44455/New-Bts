@@ -240,7 +240,12 @@ export default function Home() {
                         {TRUST.moto}
                       </div>
                       <div className="rounded-full border border-white/30 bg-white/15 px-3 py-1 text-xs font-semibold text-white backdrop-blur-[18px]">
-                        Slide {idx + 1} / {IMAGES.slider.length}
+                        <span lang="en" className="lang-en">
+                          Slide {idx + 1} / {IMAGES.slider.length}
+                        </span>
+                        <span lang="te" className="lang-te">
+                          స్లైడ్ {idx + 1} / {IMAGES.slider.length}
+                        </span>
                       </div>
                     </div>
                   </div>
