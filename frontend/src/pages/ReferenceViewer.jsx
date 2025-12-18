@@ -66,7 +66,7 @@ export default function ReferenceViewer() {
         </div>
       </div>
 
-      {/* View-only viewer shell (PDFs will be uploaded later) */}
+      {/* View-only viewer shell */}
       <Card
         className="rounded-3xl border-[rgba(201,162,77,0.35)] bg-white/35 p-6 shadow-[0_18px_55px_rgba(58,42,26,0.14)] backdrop-blur-[18px]"
         onContextMenu={(e) => e.preventDefault()}
@@ -74,21 +74,19 @@ export default function ReferenceViewer() {
         <div className="text-sm text-[color:var(--brand-text-muted)]">
           {cfg.message}
         </div>
-        <div className="mt-6 rounded-2xl border border-[rgba(201,162,77,0.28)] bg-white/30 p-6 text-sm text-[color:var(--brand-text-muted)]">
-          PDF viewer will appear here after the document is uploaded.
-          <div className="mt-2">(View-only • Download/Print disabled where technically possible)</div>
 
-          {/* Best-effort: When PDFs are added later, replace this with an embedded PDF renderer. */}
-          <div className="mt-5">
-            <div className="rounded-xl border border-[rgba(201,162,77,0.28)] bg-white/35 px-4 py-3 text-sm">
-              <div className="font-semibold text-[color:var(--brand-text)]">{cfg.message}</div>
-              <div className="mt-1 text-[color:var(--brand-text-muted)]">
-                Document is not available yet.
-              </div>
-              <div className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--brand-red)]">
-                <span>Return to Home</span>
-                <ChevronRight className="h-4 w-4" />
-              </div>
+        <div className="mt-6">
+          {/* If the PDF is missing, backend returns 204. pdf.js will fail to load and we show the message below. */}
+          <PdfCanvasViewer url={`${API}/reference/${cfg.apiDoc}`} />
+
+          <div className="mt-5 rounded-xl border border-[rgba(201,162,77,0.28)] bg-white/35 px-4 py-3 text-sm">
+            <div className="font-semibold text-[color:var(--brand-text)]">{cfg.message}</div>
+            <div className="mt-1 text-[color:var(--brand-text-muted)]">
+              Document is not available yet.
+            </div>
+            <div className="mt-3 inline-flex items-center gap-2 text-sm font-semibold text-[color:var(--brand-red)]">
+              <span>Return to Home</span>
+              <ChevronRight className="h-4 w-4" />
             </div>
           </div>
         </div>
