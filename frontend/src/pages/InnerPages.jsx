@@ -128,8 +128,11 @@ export const AboutPage = () => {
 
       {/* ADD-ON 1: Founder details inserted at the very top of About section */}
       <Card className="rounded-3xl border-[rgba(201,162,77,0.35)] bg-white/35 p-6 shadow-[0_18px_55px_rgba(58,42,26,0.14)] backdrop-blur-[18px]">
-        <div className="font-display text-xl font-semibold text-[color:var(--brand-text)]">
+        <div lang="en" className="lang-en font-display text-xl font-semibold text-[color:var(--brand-text)]">
           {FOUNDER.headingEn}
+        </div>
+        <div lang="te" className="lang-te font-display text-xl font-semibold text-[color:var(--brand-text)]">
+          స్థాపకుడు & ఆధ్యాత్మిక మార్గదర్శకుడు
         </div>
         <div className="mt-2 font-display text-2xl font-semibold text-[color:var(--brand-red)]">
           {FOUNDER.name}
