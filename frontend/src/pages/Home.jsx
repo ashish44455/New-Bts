@@ -110,14 +110,31 @@ export default function Home() {
           <div>
             <div className="flex flex-wrap gap-2">
               <IconBadge icon={Star} label={TRUST.moto} />
-              <IconBadge icon={Flame} label={`${TRUST.progressCompleted} / ${TRUST.progressTotal} Shakti Peethas`} />
+              <IconBadge
+                icon={Flame}
+                label={
+                  <>
+                    <span lang="en" className="lang-en">
+                      {TRUST.progressCompleted} / {TRUST.progressTotal} Shakti Peethas
+                    </span>
+                    <span lang="te" className="lang-te">
+                      {TRUST.progressCompleted} / {TRUST.progressTotal} శక్తి పీఠాలు
+                    </span>
+                  </>
+                }
+              />
             </div>
 
             <h1 className="mt-5 font-display text-3xl font-semibold tracking-tight text-[color:var(--brand-text)] md:text-5xl">
               {TRUST.name}
             </h1>
             <p className="mt-4 max-w-xl text-sm leading-relaxed text-[color:var(--brand-text-muted)] md:text-base">
-              Traditional Pujas, Astrology & Seva — Guided Personally.
+              <span lang="en" className="lang-en">
+                Traditional Pujas, Astrology & Seva — Guided Personally.
+              </span>
+              <span lang="te" className="lang-te">
+                సంప్రదాయ పూజలు, జ్యోతిష్యం & సేవ — వ్యక్తిగతంగా మార్గదర్శనం.
+              </span>
             </p>
 
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
@@ -141,7 +158,12 @@ export default function Home() {
             </div>
 
             <div className="mt-7 max-w-xl rounded-2xl border border-[rgba(201,162,77,0.35)] bg-white/35 p-4 text-sm text-[color:var(--brand-text-muted)] backdrop-blur-[16px]">
-              To preserve personal guidance and traditional authenticity, all bookings and consultations are handled directly via WhatsApp.
+              <span lang="en" className="lang-en">
+                To preserve personal guidance and traditional authenticity, all bookings and consultations are handled directly via WhatsApp.
+              </span>
+              <span lang="te" className="lang-te">
+                వ్యక్తిగత మార్గదర్శనం మరియు సంప్రదాయ ప్రామాణికతను నిలుపుకోవడానికి, అన్ని బుకింగ్స్ & సంప్రదింపులు WhatsApp ద్వారా మాత్రమే నిర్వహించబడతాయి.
+              </span>
             </div>
           </div>
 
@@ -157,10 +179,12 @@ export default function Home() {
             </div>
             <div className="mt-4 flex flex-wrap gap-2">
               <Badge className="rounded-full bg-[rgba(201,162,77,0.18)] text-[color:var(--brand-text)] hover:bg-[rgba(201,162,77,0.18)]">
-                Soft sacred glow (placeholder)
+                <span lang="en" className="lang-en">Soft sacred glow (placeholder)</span>
+                <span lang="te" className="lang-te">సూక్ష్మ పవిత్ర కాంతి (ప్లేస్‌హోల్డర్)</span>
               </Badge>
               <Badge className="rounded-full bg-[rgba(139,30,30,0.14)] text-[color:var(--brand-text)] hover:bg-[rgba(139,30,30,0.14)]">
-                Replaceable image
+                <span lang="en" className="lang-en">Replaceable image</span>
+                <span lang="te" className="lang-te">మార్చగల చిత్రం</span>
               </Badge>
             </div>
           </div>
@@ -170,9 +194,28 @@ export default function Home() {
       {/* Slider */}
       <section className="space-y-5">
         <SectionHeading
-          eyebrow="Devotional Gallery"
-          title="Sacred moments & temple atmosphere"
-          desc="A smooth slider with replaceable devotional placeholders (you can swap these with your official images anytime)."
+          eyebrow={
+            <>
+              <span lang="en" className="lang-en">Devotional Gallery</span>
+              <span lang="te" className="lang-te">భక్తి గ్యాలరీ</span>
+            </>
+          }
+          title={
+            <>
+              <span lang="en" className="lang-en">Sacred moments & temple atmosphere</span>
+              <span lang="te" className="lang-te">పవిత్ర క్షణాలు & ఆలయ వాతావరణం</span>
+            </>
+          }
+          desc={
+            <>
+              <span lang="en" className="lang-en">
+                A smooth slider with replaceable devotional placeholders (you can swap these with your official images anytime).
+              </span>
+              <span lang="te" className="lang-te">
+                మార్చగల భక్తి ప్లేస్‌హోల్డర్ చిత్రాలతో సున్నితమైన స్లైడర్ (మీ అధికారిక చిత్రాలతో ఎప్పుడైనా మారుస్తారు).
+              </span>
+            </>
+          }
         />
 
         <Carousel
