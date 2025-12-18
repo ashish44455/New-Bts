@@ -251,7 +251,7 @@ export default function Home() {
       <section className="space-y-6">
         <SectionHeading
           eyebrow="Andhra Panchangam & Calendar"
-          title="ఆంధ్ర పంచాంగం & కాలదర్శిని"
+          title={<span lang="te">ఆంధ్ర పంచాంగం & కాలదర్శిని</span>}
           desc={undefined}
         />
 
