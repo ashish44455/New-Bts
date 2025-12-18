@@ -88,7 +88,7 @@ export default function ReferenceViewer() {
                 className="block"
                 aria-label={`Open ${cfg.apiDoc} document ${idx + 1}`}
               >
-              <div className="relative">
+                <div className="relative">
                 <img
                   src={
                     cfg.apiDoc === "panchangam"
