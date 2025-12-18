@@ -53,7 +53,7 @@ export default function ReferenceViewer() {
           {cfg.titleEn}
         </div>
         <div
-          lang="te"
+          lang={cfg.titleTeLang || "te"}
           className="font-display text-2xl font-semibold text-[color:var(--brand-red)]"
         >
           {cfg.titleTe}
