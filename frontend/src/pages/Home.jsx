@@ -252,8 +252,17 @@ export default function Home() {
         <div lang="en" className="lang-en"></div>
         <div lang="te" className="lang-te"></div>
         <SectionHeading
-          eyebrow={<span lang="en" className="lang-en">Andhra Panchangam & Calendar</span>}
-          title={<span lang="te" className="lang-te">ఆంధ్ర పంచాంగం & కాలదర్శిని</span>}
+          eyebrow={undefined}
+          title={
+            <>
+              <span lang="en" className="lang-en">
+                Andhra Panchangam & Calendar
+              </span>
+              <span lang="te" className="lang-te">
+                ఆంధ్ర పంచాంగం & కాలదర్శిని
+              </span>
+            </>
+          }
           desc={undefined}
         />
 
@@ -274,7 +283,12 @@ export default function Home() {
               <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(58,42,26,0.55),transparent_65%)]" />
             </div>
             <div className="px-5 py-4">
-              <div className="text-xs text-[color:var(--brand-text-muted)]">View Panchangam</div>
+              <div lang="en" className="lang-en text-xs text-[color:var(--brand-text-muted)]">
+                View Panchangam
+              </div>
+              <div lang="te" className="lang-te text-xs text-[color:var(--brand-text-muted)]">
+                పంచాంగం చూడండి
+              </div>
             </div>
           </Link>
 
@@ -294,7 +308,12 @@ export default function Home() {
               <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_top,rgba(58,42,26,0.55),transparent_65%)]" />
             </div>
             <div className="px-5 py-4">
-              <div className="text-xs text-[color:var(--brand-text-muted)]">View Calendar</div>
+              <div lang="en" className="lang-en text-xs text-[color:var(--brand-text-muted)]">
+                View Calendar
+              </div>
+              <div lang="te" className="lang-te text-xs text-[color:var(--brand-text-muted)]">
+                కాలదర్శిని చూడండి
+              </div>
             </div>
           </Link>
         </div>

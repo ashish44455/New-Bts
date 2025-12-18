@@ -150,6 +150,32 @@ export const SiteLayout = () => {
 
           {/* Mobile */}
           <div className="flex items-center gap-2 md:hidden">
+            {/* Language toggle (mobile) */}
+            <ToggleGroup
+              type="single"
+              value={lang}
+              onValueChange={(v) => {
+                if (v === "en" || v === "te") setLang(v);
+              }}
+              className="rounded-full border border-[rgba(201,162,77,0.35)] bg-white/35 p-1 backdrop-blur-[18px]"
+              aria-label="Language toggle"
+            >
+              <ToggleGroupItem
+                value="en"
+                className="h-9 rounded-full px-2 text-[11px] font-semibold data-[state=on]:bg-white/70 data-[state=on]:text-[color:var(--brand-red)]"
+                aria-label="English"
+              >
+                EN
+              </ToggleGroupItem>
+              <ToggleGroupItem
+                value="te"
+                lang="te"
+                className="h-9 rounded-full px-2 text-[11px] font-semibold data-[state=on]:bg-white/70 data-[state=on]:text-[color:var(--brand-red)]"
+                aria-label="Telugu"
+              >
+                తెలుగు
+              </ToggleGroupItem>
+            </ToggleGroup>
             <Button
               asChild
               size="sm"

@@ -40,7 +40,7 @@ export default function ZodiacDetail() {
         </Link>
         <div
           lang="te"
-          className="mt-1 text-xs text-[color:var(--brand-text-muted)]"
+          className="lang-te mt-1 text-xs text-[color:var(--brand-text-muted)]"
         >
           హోమ్‌కు తిరిగి వెళ్ళండి
         </div>
