@@ -167,6 +167,36 @@ export default function Home() {
               <span lang="te" className="lang-te">
                 వ్యక్తిగత మార్గదర్శనం మరియు సంప్రదాయ ప్రామాణికతను నిలుపుకోవడానికి, అన్ని బుకింగ్స్ & సంప్రదింపులు WhatsApp ద్వారా మాత్రమే నిర్వహించబడతాయి.
               </span>
+
+            {/* Contact card (above-the-fold) */}
+            <div className="mt-6 max-w-xl rounded-2xl border border-[rgba(201,162,77,0.35)] bg-white/35 p-4 text-sm backdrop-blur-[16px]">
+              <div className="flex flex-wrap items-center gap-3">
+                <a
+                  href={waLink}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full border border-[rgba(201,162,77,0.45)] bg-white/35 px-4 py-2 font-semibold text-[color:var(--brand-text)] hover:bg-white/55"
+                >
+                  <span lang="en" className="lang-en">WhatsApp</span>
+                  <span lang="te" className="lang-te">వాట్సాప్</span>
+                  <span className="text-[color:var(--brand-text-muted)]">{TRUST.phoneDisplay}</span>
+                </a>
+
+                <a
+                  href={`tel:${TRUST.phoneDisplay.replace(/\s+/g, "")}`}
+                  className="inline-flex items-center gap-2 rounded-full border border-[rgba(201,162,77,0.45)] bg-white/35 px-4 py-2 font-semibold text-[color:var(--brand-text)] hover:bg-white/55"
+                >
+                  <span lang="en" className="lang-en">Phone</span>
+                  <span lang="te" className="lang-te">ఫోన్</span>
+                  <span className="text-[color:var(--brand-text-muted)]">{TRUST.phoneDisplay}</span>
+                </a>
+              </div>
+              <div className="mt-3 text-xs text-[color:var(--brand-text-muted)]">
+                <span lang="en" className="lang-en">For bookings and guidance, contact via WhatsApp or phone.</span>
+                <span lang="te" className="lang-te">బుకింగ్స్ మరియు మార్గదర్శనం కోసం WhatsApp లేదా ఫోన్ ద్వారా సంప్రదించండి.</span>
+              </div>
+            </div>
+
             </div>
           </div>
 
